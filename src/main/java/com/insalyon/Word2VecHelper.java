@@ -1,12 +1,15 @@
 package com.insalyon;
 
 /**
- * Created by mgarchery on 18/11/2015.
+ * Created by mgarchery on 19/11/2015.
  */
+import org.deeplearning4j.berkeley.Pair;
 import org.deeplearning4j.models.embeddings.WeightLookupTable;
 import org.deeplearning4j.models.embeddings.inmemory.InMemoryLookupTable;
 import org.deeplearning4j.models.embeddings.loader.WordVectorSerializer;
+import org.deeplearning4j.models.embeddings.wordvectors.WordVectors;
 import org.deeplearning4j.models.word2vec.Word2Vec;
+import org.deeplearning4j.models.word2vec.wordstore.VocabCache;
 import org.deeplearning4j.models.word2vec.wordstore.inmemory.InMemoryLookupCache;
 import org.deeplearning4j.text.sentenceiterator.SentenceIterator;
 import org.deeplearning4j.text.sentenceiterator.UimaSentenceIterator;
@@ -18,18 +21,29 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 
+import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 
 
-public class Word2VecRawTextExample {
+public class Word2VecHelper {
 
-    private static Logger log = LoggerFactory.getLogger(Word2VecRawTextExample.class);
+    private static Logger log = LoggerFactory.getLogger(Word2VecHelper.class);
 
-    public static void test() throws Exception {
+    private static final String INPUT_RESOURCE = "enwik8_clean";
+    private static final String OUTPUT_VECTORS = "output/" + INPUT_RESOURCE + "_vectors" ;
 
-        String filePath = new ClassPathResource("raw_sentences.txt").getFile().getAbsolutePath();
+    private static final float LEARNING_RATE = 0.025f;
+    private static final int VECTOR_LENGTH = 100;
+
+    private static final int MIN_WORD_FREQUENCY = 3;
+    private static final int NET_ITERATIONS = 1;
+    private static final int LAYER_SIZE = 100;
+    private static final int WINDOW_SIZE = 5;
+
+
+    public static void extract() throws Exception {
+
+        String filePath = new ClassPathResource(INPUT_RESOURCE).getFile().getAbsolutePath();
 
         log.info("Load & Vectorize Sentences....");
         // Strip white space before and after for each line
@@ -40,46 +54,30 @@ public class Word2VecRawTextExample {
 
         InMemoryLookupCache cache = new InMemoryLookupCache();
         WeightLookupTable table = new InMemoryLookupTable.Builder()
-                .vectorLength(100)
+                .vectorLength(VECTOR_LENGTH)
                 .useAdaGrad(false)
                 .cache(cache)
-                .lr(0.025f).build();
+                .lr(LEARNING_RATE).build();
 
         log.info("Building model....");
         Word2Vec vec = new Word2Vec.Builder()
-                .minWordFrequency(3).iterations(1)
-                .layerSize(100).lookupTable(table)
+                .minWordFrequency(MIN_WORD_FREQUENCY).iterations(NET_ITERATIONS)
+                .layerSize(LAYER_SIZE).lookupTable(table)
                 .stopWords(new ArrayList<String>())
                 .vocabCache(cache).seed(42)
-                .windowSize(5).iterate(iter).tokenizerFactory(t).build();
+                .windowSize(WINDOW_SIZE).iterate(iter).tokenizerFactory(t).build();
 
         log.info("Fitting Word2Vec model....");
         vec.fit();
 
         log.info("Writing word vectors to text file....");
         // Write word
-        WordVectorSerializer.writeWordVectors(vec, "output/pathToWriteto.txt");
+        WordVectorSerializer.writeWordVectors(vec,OUTPUT_VECTORS);
+    }
 
-        log.info("Evaluate model....");
-
-        double sim = vec.similarity("people", "money");
-        log.info("Similarity between people and money: " + sim);
-
-        Collection<String> similar = vec.wordsNearest("day", 10);
-        log.info("Similar words to 'day' : " + similar);
-
-        similar = vec.wordsNearest("university", 10);
-        log.info("Similar words to 'university' : " + similar);
-
-        Collection<String> list = vec.wordsNearest(Arrays.asList("my", "you"), Arrays.asList("me"), 10);
-        log.info("me + you - my = ");
-        for (String s : list) {
-            log.info(s);
-        }
-
-        log.info("vocab:");
-        for (String w : vec.vocab().words()) {
-            log.info(w);
-        }
+    public static WordVectors loadModel() throws Exception{
+        File f = new File(OUTPUT_VECTORS);
+        Pair<InMemoryLookupTable, VocabCache> p = WordVectorSerializer.loadTxt(f);
+        return WordVectorSerializer.fromPair(p);
     }
 }
