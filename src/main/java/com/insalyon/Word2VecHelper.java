@@ -11,25 +11,29 @@ import org.deeplearning4j.models.embeddings.wordvectors.WordVectors;
 import org.deeplearning4j.models.word2vec.Word2Vec;
 import org.deeplearning4j.models.word2vec.wordstore.VocabCache;
 import org.deeplearning4j.models.word2vec.wordstore.inmemory.InMemoryLookupCache;
+import org.deeplearning4j.text.sentenceiterator.LineSentenceIterator;
 import org.deeplearning4j.text.sentenceiterator.SentenceIterator;
-import org.deeplearning4j.text.sentenceiterator.UimaSentenceIterator;
 import org.deeplearning4j.text.tokenization.tokenizer.preprocessor.CommonPreprocessor;
 import org.deeplearning4j.text.tokenization.tokenizerfactory.DefaultTokenizerFactory;
 import org.deeplearning4j.text.tokenization.tokenizerfactory.TokenizerFactory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.ClassPathResource;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class Word2VecHelper {
 
     private static Logger log = LoggerFactory.getLogger(Word2VecHelper.class);
 
-    private static final String INPUT_RESOURCE = "enwik8_clean";
+    private static final String INPUT_RESOURCE = "raw_sentences.txt";
     private static final String OUTPUT_VECTORS = "output/" + INPUT_RESOURCE + "_vectors" ;
 
     private static final float LEARNING_RATE = 0.025f;
@@ -43,11 +47,10 @@ public class Word2VecHelper {
 
     public static void extract() throws Exception {
 
-        String filePath = new ClassPathResource(INPUT_RESOURCE).getFile().getAbsolutePath();
-
         log.info("Load & Vectorize Sentences....");
         // Strip white space before and after for each line
-        SentenceIterator iter = UimaSentenceIterator.createWithPath(filePath);
+        SentenceIterator iter = new LineSentenceIterator(new File("input/" + INPUT_RESOURCE));
+
         // Split on white spaces in the line to get words
         TokenizerFactory t = new DefaultTokenizerFactory();
         t.setTokenPreProcessor(new CommonPreprocessor());
@@ -73,11 +76,35 @@ public class Word2VecHelper {
         log.info("Writing word vectors to text file....");
         // Write word
         WordVectorSerializer.writeWordVectors(vec,OUTPUT_VECTORS);
+        writeParametersFile();
     }
 
     public static WordVectors loadModel() throws Exception{
         File f = new File(OUTPUT_VECTORS);
         Pair<InMemoryLookupTable, VocabCache> p = WordVectorSerializer.loadTxt(f);
         return WordVectorSerializer.fromPair(p);
+    }
+
+    private static void writeParametersFile() throws Exception{
+        File f = new File(OUTPUT_VECTORS + ".parameters");
+        FileOutputStream fos = new FileOutputStream(f);
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+
+        List<String> lines = new ArrayList<>();
+        lines.add("INPUT_RESOURCE : " + INPUT_RESOURCE);
+        lines.add("LEARNING_RATE : " + LEARNING_RATE);
+        lines.add("VECTOR_LENGTH : " + VECTOR_LENGTH);
+        lines.add("MIN_WORD_FREQUENCY : " + MIN_WORD_FREQUENCY);
+        lines.add("NET_ITERATIONS : " + NET_ITERATIONS);
+        lines.add("LAYER_SIZE : " + LAYER_SIZE);
+        lines.add("WINDOW_SIZE : " + WINDOW_SIZE);
+
+        for (String line : lines){
+            bw.write(line);
+            bw.newLine();
+        }
+        bw.close();
+
+
     }
 }
