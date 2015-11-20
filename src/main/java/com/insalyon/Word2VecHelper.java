@@ -33,17 +33,17 @@ public class Word2VecHelper {
 
     private static Logger log = LoggerFactory.getLogger(Word2VecHelper.class);
 
-    private static final String INPUT_RESOURCE = "raw_sentences.txt";
+    private static final String INPUT_RESOURCE = "enwik8_clean";
     private static final String OUTPUT_VECTORS = "output/" + INPUT_RESOURCE + "_vectors" ;
 
     private static final float LEARNING_RATE = 0.025f;
     private static final int VECTOR_LENGTH = 100;
-
-    private static final int MIN_WORD_FREQUENCY = 3;
+    private static final int BATCH_SIZE = 1000;
+    private static final double SUBSAMPLING = 1e-5;
+    private static final int MIN_WORD_FREQUENCY = 5;
     private static final int NET_ITERATIONS = 1;
     private static final int LAYER_SIZE = 100;
     private static final int WINDOW_SIZE = 5;
-
 
     public static void extract() throws Exception {
 
@@ -64,6 +64,8 @@ public class Word2VecHelper {
 
         log.info("Building model....");
         Word2Vec vec = new Word2Vec.Builder()
+                .batchSize(BATCH_SIZE)
+                .sampling(SUBSAMPLING) //negative sampling
                 .minWordFrequency(MIN_WORD_FREQUENCY).iterations(NET_ITERATIONS)
                 .layerSize(LAYER_SIZE).lookupTable(table)
                 .stopWords(new ArrayList<String>())
@@ -94,6 +96,8 @@ public class Word2VecHelper {
         lines.add("INPUT_RESOURCE : " + INPUT_RESOURCE);
         lines.add("LEARNING_RATE : " + LEARNING_RATE);
         lines.add("VECTOR_LENGTH : " + VECTOR_LENGTH);
+        lines.add("BATCH_SIZE : " + BATCH_SIZE);
+        lines.add("SUBSAMPLING : " + SUBSAMPLING);
         lines.add("MIN_WORD_FREQUENCY : " + MIN_WORD_FREQUENCY);
         lines.add("NET_ITERATIONS : " + NET_ITERATIONS);
         lines.add("LAYER_SIZE : " + LAYER_SIZE);
