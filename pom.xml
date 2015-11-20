@@ -69,5 +69,16 @@
       <version>${jackson.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.dbpedia.spotlight</groupId>
+      <artifactId>spotlight</artifactId>
+      <version>0.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.dbpedia.spotlight</groupId>
+      <artifactId>eval</artifactId>
+      <version>0.7</version>
+    </dependency>
+
   </dependencies>
 </project>

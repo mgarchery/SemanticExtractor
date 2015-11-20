@@ -28,13 +28,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 public class Word2VecHelper {
 
     private static Logger log = LoggerFactory.getLogger(Word2VecHelper.class);
 
-    private static final String INPUT_RESOURCE = "enwik8_clean";
-    private static final String OUTPUT_VECTORS = "output/" + INPUT_RESOURCE + "_vectors" ;
+
+    private static final String OUTPUT_VECTORS = "output/" + App.INPUT_RESOURCE + "_vectors" ;
 
     private static final float LEARNING_RATE = 0.025f;
     private static final int VECTOR_LENGTH = 100;
@@ -45,11 +44,11 @@ public class Word2VecHelper {
     private static final int LAYER_SIZE = 100;
     private static final int WINDOW_SIZE = 5;
 
-    public static void extract() throws Exception {
+    public static void extract(String inputResource) throws Exception {
 
         log.info("Load & Vectorize Sentences....");
         // Strip white space before and after for each line
-        SentenceIterator iter = new LineSentenceIterator(new File("input/" + INPUT_RESOURCE));
+        SentenceIterator iter = new LineSentenceIterator(new File("input/" + inputResource));
 
         // Split on white spaces in the line to get words
         TokenizerFactory t = new DefaultTokenizerFactory();
@@ -78,7 +77,7 @@ public class Word2VecHelper {
         log.info("Writing word vectors to text file....");
         // Write word
         WordVectorSerializer.writeWordVectors(vec,OUTPUT_VECTORS);
-        writeParametersFile();
+        writeParametersFile(inputResource);
     }
 
     public static WordVectors loadModel() throws Exception{
@@ -87,13 +86,13 @@ public class Word2VecHelper {
         return WordVectorSerializer.fromPair(p);
     }
 
-    private static void writeParametersFile() throws Exception{
+    private static void writeParametersFile(String inputResource) throws Exception{
         File f = new File(OUTPUT_VECTORS + ".parameters");
         FileOutputStream fos = new FileOutputStream(f);
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
 
-        List<String> lines = new ArrayList<>();
-        lines.add("INPUT_RESOURCE : " + INPUT_RESOURCE);
+        List<String> lines = new ArrayList<String>();
+        lines.add("INPUT_RESOURCE : " + inputResource);
         lines.add("LEARNING_RATE : " + LEARNING_RATE);
         lines.add("VECTOR_LENGTH : " + VECTOR_LENGTH);
         lines.add("BATCH_SIZE : " + BATCH_SIZE);
