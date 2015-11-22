@@ -23,10 +23,10 @@ import java.util.List;
  */
 public class DBpediaSpotlightCustomClient extends DBpediaSpotlightClient {
 
-    //private final static String API_URL = "http://jodaiber.dyndns.org:2222/";
-    private final static String API_URL = "http://spotlight.dbpedia.org/";
-    private static final double CONFIDENCE = 0.5;
-    private static final int SUPPORT = 0;
+    //private final static String API_URL = "http://spotlight.dbpedia.org/";
+    private final static String API_URL = "http://spotlight.sztaki.hu:2222/";
+    private static final double CONFIDENCE = 0.3;
+    private static final int SUPPORT = 10;
 
     public List<Pair<String,DBpediaResource>> extractWithSurfaceForm(Text text) throws AnnotationException {
 

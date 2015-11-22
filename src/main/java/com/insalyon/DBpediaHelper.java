@@ -33,26 +33,27 @@ public class DBpediaHelper {
         File output = new File("input/" + App.INPUT_RESOURCE + ".annotated");
         BufferedWriter bw = new BufferedWriter(new FileWriter(output));
 
-            String line;
-            while (( line = br.readLine()) != null) {
-                try{
-                    Text t = new Text(line);
-                    List<Pair<String,DBpediaResource>> lineAnnotations = client.extractWithSurfaceForm(t);
-                    annotations.addAll(lineAnnotations);
+        String line;
+        String annotatedLine;
 
-                    String annotatedLine = line;
-                    for(Pair<String,DBpediaResource> annotation: lineAnnotations){
-                        annotatedLine = annotatedLine.replaceAll(annotation.getKey(), annotation.getValue().uri());
-                    }
-                    bw.write(annotatedLine);
-                    bw.newLine();
+        while (( line = br.readLine()) != null) {
 
-                }catch(Exception e){
-                    e.printStackTrace();
+            annotatedLine = line;
+            try{
+                //annotate line
+                Text t = new Text(line);
+                List<Pair<String,DBpediaResource>> lineAnnotations = client.extractWithSurfaceForm(t);
+                annotations.addAll(lineAnnotations);
+                for(Pair<String,DBpediaResource> annotation: lineAnnotations){
+                    annotatedLine = annotatedLine.replaceAll(annotation.getKey(), annotation.getValue().uri());
                 }
-
+            }catch(Exception e){
+                e.printStackTrace();
             }
-
+            bw.write(annotatedLine);
+            bw.newLine();
+            bw.flush();
+        }
         br.close();
         bw.close();
 

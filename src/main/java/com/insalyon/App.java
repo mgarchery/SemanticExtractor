@@ -12,7 +12,7 @@ public class App
 {
     private static Logger log = LoggerFactory.getLogger(Word2VecRawTextExample.class);
 
-    public static final String INPUT_RESOURCE = "enwik8_clean_short";
+    public static final String INPUT_RESOURCE = "enwik8_clean";
 
     public static void main( String[] args )
     {
