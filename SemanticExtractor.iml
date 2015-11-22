@@ -210,8 +210,7 @@
     <orderEntry type="library" name="Maven: com.twelvemonkeys.imageio:imageio-bmp:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.5.1" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.12" level="project" />
-    <orderEntry type="library" name="Maven: org.dbpedia.spotlight:spotlight:0.7" level="project" />
-    <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.10.4" level="project" />
     <orderEntry type="library" name="Maven: org.dbpedia.spotlight:eval:0.7" level="project" />
     <orderEntry type="library" name="Maven: org.dbpedia.spotlight:core:0.7" level="project" />
     <orderEntry type="library" name="Maven: org.dbpedia.extraction:core:3.8" level="project" />

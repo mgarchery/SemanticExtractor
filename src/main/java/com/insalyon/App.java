@@ -12,17 +12,18 @@ public class App
 {
     private static Logger log = LoggerFactory.getLogger(Word2VecRawTextExample.class);
 
-    public static final String INPUT_RESOURCE = "enwik8_clean";
+    public static final String INPUT_RESOURCE = "enwik8_clean.annotated";
+    //public static final String INPUT_RESOURCE = "raw_sentences.txt";
 
     public static void main( String[] args )
     {
 
         try{
-            //Word2VecHelper.extract(INPUT_RESOURCE);
+            Word2VecHelper.extract(INPUT_RESOURCE);
             //WordVectors vec = Word2VecHelper.loadModel() ;
 //
 
-            DBpediaHelper.annotate();
+            //DBpediaHelper.annotate();
 //
 //            log.info("vocab size : " + vec.vocab().words().size());
 //            log.info("nearest words to city : " + vec.wordsNearest("city",10));
