@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.insalyon</groupId>
@@ -28,7 +28,6 @@
     </dependencies>
   </dependencyManagement>
 
-
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -36,13 +35,11 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.deeplearning4j</groupId>
       <artifactId>deeplearning4j-nlp</artifactId>
       <version>${dl4j.version}</version>
     </dependency>
-
     <dependency>
       <groupId>org.deeplearning4j</groupId>
       <artifactId>deeplearning4j-core</artifactId>
@@ -71,6 +68,11 @@
 
     <dependency>
       <groupId>org.scala-lang</groupId>
+      <artifactId>scala-compiler</artifactId>
+      <version>2.10.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
       <version>2.10.4</version>
     </dependency>
@@ -79,10 +81,28 @@
       <groupId>org.dbpedia.spotlight</groupId>
       <artifactId>eval</artifactId>
       <version>0.7</version>
+      <optional>true</optional>
+      <exclusions>
+        <exclusion>
+          <groupId>org.scala-lang</groupId>
+          <artifactId>scala-library</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
-
-
+    <!--<dependency>-->
+      <!--<groupId>org.deeplearning4j</groupId>-->
+      <!--<artifactId>deeplearning4j-scaleout-akka</artifactId>-->
+      <!--<version>0.4-rc3.4</version>-->
+      <!--<optional>true</optional>-->
+      <!--<exclusions>-->
+        <!--<exclusion>-->
+          <!--<groupId>org.scala-lang</groupId>-->
+          <!--<artifactId>scala-library</artifactId>-->
+        <!--</exclusion>-->
+      <!--</exclusions>-->
+    <!--</dependency>-->
 
 
   </dependencies>
+
 </project>
