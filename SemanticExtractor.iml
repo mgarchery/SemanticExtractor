@@ -210,6 +210,8 @@
     <orderEntry type="library" name="Maven: com.twelvemonkeys.imageio:imageio-bmp:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.5.1" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.12" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-compiler:2.10.4" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-reflect:2.10.4" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.10.4" level="project" />
     <orderEntry type="library" name="Maven: org.dbpedia.spotlight:eval:0.7" level="project" />
     <orderEntry type="library" name="Maven: org.dbpedia.spotlight:core:0.7" level="project" />
@@ -241,7 +243,6 @@
     <orderEntry type="library" name="Maven: weka:kea-goss-weka:5.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: net.liftweb:lift-json_2.9.2:2.5-M1" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scalap:2.9.2" level="project" />
-    <orderEntry type="library" name="Maven: org.scala-lang:scala-compiler:2.9.2" level="project" />
     <orderEntry type="library" name="Maven: net.sf.opencsv:opencsv:2.0" level="project" />
     <orderEntry type="library" name="Maven: hsqldb:hsqldb:1.8.0.1" level="project" />
     <orderEntry type="library" name="Maven: opennlp:maxent:3.0.0" level="project" />

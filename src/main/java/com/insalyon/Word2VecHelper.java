@@ -52,7 +52,7 @@ public class Word2VecHelper {
 
         // Split on white spaces in the line to get words
         TokenizerFactory t = new DefaultTokenizerFactory();
-        t.setTokenPreProcessor(new CommonPreprocessor());
+        t.setTokenPreProcessor(new DBpediaPreprocessor());
 
         InMemoryLookupCache cache = new InMemoryLookupCache();
         WeightLookupTable table = new InMemoryLookupTable.Builder()
