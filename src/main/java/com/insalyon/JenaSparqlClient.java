@@ -19,10 +19,10 @@ public class JenaSparqlClient {
      * @param objectResource object DBpedia resource (without http://dbpedia.org/resource/ prefix)
      * @return list of RDF triples as string array : [subject][relation][object]
      */
-    public static List<String[]> getRelations (String subjectResource, String objectResource){
+    public static List<RDFTriple> getRelations (String subjectResource, String objectResource){
 
         ParameterizedSparqlString queryString = new ParameterizedSparqlString(
-                        "SELECT DISTINCT ?relation WHERE\n" +
+                "SELECT DISTINCT ?relation WHERE\n" +
                         "{\n" +
                         "?subject ?relation ?object \n"+
                         "}\n"
@@ -38,19 +38,50 @@ public class JenaSparqlClient {
         QuerySolutionMap querySolutionMap = new QuerySolutionMap();
         ParameterizedSparqlString parameterizedSparqlString = new ParameterizedSparqlString(query.toString(), querySolutionMap);
 
-        List<String[]> resultsList = new ArrayList<String[]>();
+        List<RDFTriple> resultsList = new ArrayList<RDFTriple>();
         QueryEngineHTTP httpQuery = new QueryEngineHTTP(sparqlEndpoint,parameterizedSparqlString.asQuery());
         // execute a Select query
         ResultSet results = httpQuery.execSelect();
         while (results.hasNext()) {
             QuerySolution solution = results.next();
-            String[] result  = new String[3];
-            result[0] = subjectResource;
-            result[1] = solution.get("relation").toString();
-            result[2] = objectResource;
-
+            RDFTriple result  = new RDFTriple(subjectResource, solution.get("relation").toString(),objectResource);
             resultsList.add(result);
 
+        }
+        return resultsList;
+    }
+
+    /**
+     * gets all DBpedia relations implicating subject resource
+     * @param subjectResource subject DBpedia resource (without http://dbpedia.org/resource/ prefix)
+     * @return list of RDF triples as string array : [subject][relation][object]
+     */
+    public static List<RDFTriple> getRelations (String subjectResource){
+
+        ParameterizedSparqlString queryString = new ParameterizedSparqlString(
+                "SELECT DISTINCT ?relation ?object WHERE\n" +
+                        "{\n" +
+                        "?subject ?relation ?object \n"+
+                        "}\n"
+        ) {{
+            setNsPrefix( "dbres", "http://dbpedia.org/resource/" );
+            setNsPrefix( "rdfs", "http://www.w3.org/2000/01/rdf-schema#" );
+        }};
+
+        queryString.setIri("?subject", queryString.getNsPrefixURI( "dbres" ) + subjectResource );
+
+        Query query = QueryFactory.create(queryString.toString(), Syntax.syntaxARQ) ;
+        QuerySolutionMap querySolutionMap = new QuerySolutionMap();
+        ParameterizedSparqlString parameterizedSparqlString = new ParameterizedSparqlString(query.toString(), querySolutionMap);
+
+        List<RDFTriple> resultsList = new ArrayList<RDFTriple>();
+        QueryEngineHTTP httpQuery = new QueryEngineHTTP(sparqlEndpoint,parameterizedSparqlString.asQuery());
+        // execute a Select query
+        ResultSet results = httpQuery.execSelect();
+        while (results.hasNext()) {
+            QuerySolution solution = results.next();
+            RDFTriple result  = new RDFTriple(subjectResource, solution.get("relation").toString(), solution.get("object").toString());
+            resultsList.add(result);
         }
         return resultsList;
     }

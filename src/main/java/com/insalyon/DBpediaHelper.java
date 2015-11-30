@@ -74,10 +74,10 @@ public class DBpediaHelper {
             for(String entity2 : dbpediaResources){
 
                 if(entity1 != entity2){
-                    List<String []> relations = JenaSparqlClient.getRelations(entity1, entity2);
+                    List<RDFTriple> relations = JenaSparqlClient.getRelations(entity1, entity2);
 
-                    for (String[] relation : relations) {
-                        bw.write(relation[0] + "\t" + relation[1] + "\t" + relation[2]);
+                    for (RDFTriple triple : relations) {
+                        bw.write(triple.getSubject() + "\t" + triple.getRelation() + "\t" + triple.getObject());
                         bw.newLine();
                         bw.flush();
                     }
@@ -96,10 +96,10 @@ public class DBpediaHelper {
             for(String entity2 : word2vec.wordsNearest(entity1,nearestNeighbors)){
 
                 if(entity1 != entity2) {
-                    List<String[]> relations = JenaSparqlClient.getRelations(entity1, entity2);
+                    List<RDFTriple> relations = JenaSparqlClient.getRelations(entity1, entity2);
 
-                    for (String[] relation : relations) {
-                        bw.write(relation[0] + "\t" + relation[1] + "\t" + relation[2]);
+                    for (RDFTriple triple : relations) {
+                        bw.write(triple.getSubject() + "\t" + triple.getRelation() + "\t" + triple.getObject());
                         bw.newLine();
                         bw.flush();
                     }

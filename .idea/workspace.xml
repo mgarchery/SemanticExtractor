@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc366cc-ee6b-4103-b1e4-c04b43b11f1b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_16.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_10.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/AnalogiesExtractor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/RDFTriple.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/insalyon/App.class" afterPath="$PROJECT_DIR$/target/classes/com/insalyon/App.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/insalyon/DBpediaHelper.class" afterPath="$PROJECT_DIR$/target/classes/com/insalyon/DBpediaHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/insalyon/DBpediaSpotlightCustomClient.class" afterPath="$PROJECT_DIR$/target/classes/com/insalyon/DBpediaSpotlightCustomClient.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/insalyon/Word2VecHelper.class" afterPath="$PROJECT_DIR$/target/classes/com/insalyon/Word2VecHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/insalyon/Word2VecRawTextExample.class" afterPath="$PROJECT_DIR$/target/classes/com/insalyon/Word2VecRawTextExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/insalyon/AppTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/insalyon/AppTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SemanticExtractor.iml" afterPath="$PROJECT_DIR$/SemanticExtractor.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/insalyon/App.java" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/App.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java" />
     </list>
     <ignored path="SemanticExtractor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,9 +38,26 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/App.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="69" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
+              <caret line="68" column="40" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RDFTriple.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/RDFTriple.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4077961">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="e#385#386#0" expanded="true" />
+                <element signature="e#415#416#0" expanded="true" />
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#481#482#0" expanded="true" />
+                <element signature="e#514#515#0" expanded="true" />
+                <element signature="e#543#544#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,28 +67,46 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getRelations#0;class#JenaSparqlClient#0" expanded="false" />
+                <element signature="e#1772#1783#0" expanded="true" />
+                <element signature="e#3469#3480#0" expanded="true" />
                 <element signature="method#getTypes#0;class#JenaSparqlClient#0" expanded="false" />
-                <element signature="e#3434#3442#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Word2VecHelper.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Word2VecHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8155922">
-              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
               <folding>
                 <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
                 <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
                 <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
                 <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
                 <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnalogiesExtractor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/AnalogiesExtractor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getEntitiesWithSimilarType#0;class#AnalogiesExtractor#0" expanded="false" />
+                <element signature="e#782#799#0" expanded="true" />
+                <element signature="e#1703#1936#0" expanded="true" />
+                <element signature="e#1935#1936#0" expanded="true" />
+                <element signature="e#2238#2249#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,11 +126,12 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="185" column="40" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
+              <caret line="101" column="112" selection-start-line="101" selection-start-column="112" selection-end-line="101" selection-end-column="112" />
               <folding>
                 <element signature="method#annotate#0;class#DBpediaHelper#0" expanded="false" />
-                <element signature="method#getTypesIndex#0;class#DBpediaHelper#0" expanded="false" />
                 <element signature="method#getTypesIndexFromFile#0;class#DBpediaHelper#0" expanded="false" />
+                <element signature="e#6738#6984#0" expanded="true" />
+                <element signature="e#6983#6984#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,11 +186,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaPreprocessor.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecSimilarities.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/RDFTriple.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/AnalogiesExtractor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java" />
       </list>
     </option>
   </component>
@@ -331,7 +362,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -403,10 +434,14 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insalyon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -803,7 +838,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24702059" sideWeight="0.4968017" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2457356" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2457356" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -841,38 +876,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="69" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="69" />
-          <folding>
-            <element signature="method#extractWithSurfaceForm#0;class#DBpediaSpotlightCustomClient#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
-          <folding>
-            <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
-            <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
-            <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
-            <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
-            <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -903,8 +906,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#annotate#0;class#DBpediaHelper#0" expanded="false" />
-            <element signature="method#getTypesIndex#0;class#DBpediaHelper#0" expanded="false" />
             <element signature="method#getTypesIndexFromFile#0;class#DBpediaHelper#0" expanded="false" />
+            <element signature="e#6738#6984#0" expanded="true" />
+            <element signature="e#6983#6984#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1251,36 +1255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecRawTextExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="185" column="40" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
-          <folding>
-            <element signature="method#annotate#0;class#DBpediaHelper#0" expanded="false" />
-            <element signature="method#getTypesIndex#0;class#DBpediaHelper#0" expanded="false" />
-            <element signature="method#getTypesIndexFromFile#0;class#DBpediaHelper#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="69" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaPreprocessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1299,29 +1273,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecRawTextExample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getRelations#0;class#JenaSparqlClient#0" expanded="false" />
-            <element signature="method#getTypes#0;class#JenaSparqlClient#0" expanded="false" />
-            <element signature="e#3434#3442#0" expanded="true" />
-          </folding>
+          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8155922">
-          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
           <folding>
             <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
             <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
             <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
             <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
             <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_66/jre/lib/rt.jar!/java/util/Collections.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getRelations#0;class#JenaSparqlClient#0" expanded="false" />
+            <element signature="e#1772#1783#0" expanded="true" />
+            <element signature="e#3469#3480#0" expanded="true" />
+            <element signature="method#getTypes#0;class#JenaSparqlClient#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/AnalogiesExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getEntitiesWithSimilarType#0;class#AnalogiesExtractor#0" expanded="false" />
+            <element signature="e#782#799#0" expanded="true" />
+            <element signature="e#1703#1936#0" expanded="true" />
+            <element signature="e#1935#1936#0" expanded="true" />
+            <element signature="e#2238#2249#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="101" column="112" selection-start-line="101" selection-start-column="112" selection-end-line="101" selection-end-column="112" />
+          <folding>
+            <element signature="method#annotate#0;class#DBpediaHelper#0" expanded="false" />
+            <element signature="method#getTypesIndexFromFile#0;class#DBpediaHelper#0" expanded="false" />
+            <element signature="e#6738#6984#0" expanded="true" />
+            <element signature="e#6983#6984#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="40" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/RDFTriple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4077961">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#514#515#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
           </folding>
         </state>
       </provider>

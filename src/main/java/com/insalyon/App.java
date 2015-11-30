@@ -26,37 +26,47 @@ public class App
             //WordVectors vec = Word2VecHelper.loadModel() ;
             //Word2VecHelper.writeEntitiesFile(vec);
 
-//            log.info("vocab size : " + vec.vocab().words().size());
-//            log.info("nearest words to city : " + vec.wordsNearest("city",10));
-//            log.info("nearest words to France : " + vec.wordsNearest("France",20));
-//            log.info("nearest words to Paris : " + vec.wordsNearest("Paris",20));
+            //getSimilarTypesTest();
 
-            // king - queen = man - woman
-//            log.info("woman + king - man = " + vec.wordsNearest(Arrays.asList("woman", "king"), Arrays.asList("man"), 10));
-
-            // france - paris = china - beijing
-//            log.info("china + paris - france = " + vec.wordsNearest(Arrays.asList("china", "paris"), Arrays.asList("france"), 10));
-
-            //JenaSparqlClient.getRelations("Berlin", "Germany");
-
-
-            //DBpediaHelper.getRDFRelations(vec.vocab().words());
-            //DBpediaHelper.getRDFRelations(Arrays.asList("France", "Paris", "Berlin", "Germany", "Europe"));
-
-           // DBpediaHelper.getRDFRelations(vec.wordsNearest("France",10));
-
-           // DBpediaHelper.getNearestRDFRelations(vec,10);
-
-            //DBpediaHelper.getTypesIndex(vec);
-
-            Map<String, List<String>> typesIndex = DBpediaHelper.getTypesIndexFromFile();
-            DBpediaHelper.writeTypesIndexToTextFile(typesIndex, false);
-
-
+            getRelationsInCorpusTest();
 
 
         }catch(Exception e){
             e.printStackTrace();
+        }
+
+    }
+
+    private static void getSimilarTypesTest() throws Exception{
+
+        final int MIN_COMMON_TYPES = 10;
+
+        WordVectors vec = Word2VecHelper.loadModel() ;
+        Map<String, List<String>> typesIndex = DBpediaHelper.getTypesIndexFromFile();
+
+        AnalogiesExtractor anex = new AnalogiesExtractor(vec,typesIndex);
+        List<Map.Entry<String, Integer>> similar= anex.getEntitiesWithSimilarType("France");
+        for (Map.Entry<String, Integer> s : similar){
+            if(s.getValue() > MIN_COMMON_TYPES){
+                log.info(s.getKey() + " " + s.getValue());
+            }
+        }
+
+
+    }
+
+    private static void getRelationsInCorpusTest() throws Exception{
+
+        final int MIN_COMMON_TYPES = 10;
+
+        WordVectors vec = Word2VecHelper.loadModel() ;
+        Map<String, List<String>> typesIndex = DBpediaHelper.getTypesIndexFromFile();
+
+        AnalogiesExtractor anex = new AnalogiesExtractor(vec,typesIndex);
+        List<RDFTriple> relations = anex.getRelationsWithinCorpus(Arrays.asList("France"));
+
+        for (RDFTriple triple : relations){
+            log.info(triple.getSubject() + " " + triple.getRelation() + " " + triple.getObject());
         }
 
     }
