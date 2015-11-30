@@ -28,6 +28,12 @@ public class DBpediaSpotlightCustomClient extends DBpediaSpotlightClient {
     private static final double CONFIDENCE = 0.3;
     private static final int SUPPORT = 10;
 
+    /**
+     * annotates given text using DBpedia Spotlight
+     * @param text text to annaotate
+     * @return list of <recognised text, corresponding annotation> pairs
+     * @throws AnnotationException
+     */
     public List<Pair<String,DBpediaResource>> extractWithSurfaceForm(Text text) throws AnnotationException {
 
         LOG.info("Querying API.");
@@ -43,12 +49,9 @@ public class DBpediaSpotlightCustomClient extends DBpediaSpotlightClient {
         } catch (UnsupportedEncodingException e) {
             throw new AnnotationException("Could not encode text.", e);
         }
-
         assert spotlightResponse != null;
-
         JSONObject resultJSON = null;
         JSONArray entities = null;
-
         try {
             resultJSON = new JSONObject(spotlightResponse);
             entities = resultJSON.getJSONArray("Resources");
@@ -60,18 +63,12 @@ public class DBpediaSpotlightCustomClient extends DBpediaSpotlightClient {
         for(int i = 0; i < entities.length(); i++) {
             try {
                 JSONObject entity = entities.getJSONObject(i);
-
                 Pair<String, DBpediaResource> p = new Pair(entity.get("@surfaceForm"),new DBpediaResource(entity.getString("@URI")));
-
                 resources.add(p);
-
             } catch (JSONException e) {
                 LOG.error("JSON exception "+e);
             }
-
         }
-
-
         return resources;
     }
 

@@ -2,13 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc366cc-ee6b-4103-b1e4-c04b43b11f1b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_compiler_2_10_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaPreprocessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_16.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_10.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/insalyon/App.class" afterPath="$PROJECT_DIR$/target/classes/com/insalyon/App.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/insalyon/DBpediaHelper.class" afterPath="$PROJECT_DIR$/target/classes/com/insalyon/DBpediaHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/insalyon/DBpediaSpotlightCustomClient.class" afterPath="$PROJECT_DIR$/target/classes/com/insalyon/DBpediaSpotlightCustomClient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/insalyon/Word2VecHelper.class" afterPath="$PROJECT_DIR$/target/classes/com/insalyon/Word2VecHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/insalyon/Word2VecRawTextExample.class" afterPath="$PROJECT_DIR$/target/classes/com/insalyon/Word2VecRawTextExample.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/insalyon/AppTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/insalyon/AppTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SemanticExtractor.iml" afterPath="$PROJECT_DIR$/SemanticExtractor.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/insalyon/App.java" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/App.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_compiler_2_9_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_10_4.xml" />
     </list>
     <ignored path="SemanticExtractor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,14 +41,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2293853">
-              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="52" column="69" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JenaSparqlClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getRelations#0;class#JenaSparqlClient#0" expanded="false" />
+                <element signature="method#getTypes#0;class#JenaSparqlClient#0" expanded="false" />
+                <element signature="e#3434#3442#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Word2VecHelper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8155922">
+              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+              <folding>
+                <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
+                <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
+                <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
+                <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
+                <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Word2VecRawTextExample.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecRawTextExample.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBpediaHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="185" column="40" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
+              <folding>
+                <element signature="method#annotate#0;class#DBpediaHelper#0" expanded="false" />
+                <element signature="method#getTypesIndex#0;class#DBpediaHelper#0" expanded="false" />
+                <element signature="method#getTypesIndexFromFile#0;class#DBpediaHelper#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBpediaSpotlightCustomClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+              <folding>
+                <element signature="method#extractWithSurfaceForm#0;class#DBpediaSpotlightCustomClient#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBpediaPreprocessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaPreprocessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="75" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="75" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,12 +154,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecExtractor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecRawTextExample.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaPreprocessor.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecSimilarities.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java" />
       </list>
     </option>
   </component>
@@ -242,16 +331,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="SemanticExtractor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -317,23 +403,18 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insalyon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35517243" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -714,20 +795,20 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32683983" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5021322" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19509594" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24702059" sideWeight="0.50319827" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19936034" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24702059" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24702059" sideWeight="0.4968017" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2457356" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2457356" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -750,7 +831,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="8" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -761,52 +844,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="26" column="69" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="69" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#extractWithSurfaceForm#0;class#DBpediaSpotlightCustomClient#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -822,7 +863,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -830,7 +877,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -849,7 +902,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#annotate#0;class#DBpediaHelper#0" expanded="false" />
+            <element signature="method#getTypesIndex#0;class#DBpediaHelper#0" expanded="false" />
+            <element signature="method#getTypesIndexFromFile#0;class#DBpediaHelper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -858,7 +913,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="method#extractWithSurfaceForm#0;class#DBpediaSpotlightCustomClient#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -874,7 +931,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -918,7 +981,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -944,7 +1013,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -977,7 +1052,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1010,7 +1091,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1121,24 +1208,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecRawTextExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14358108">
-          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Programmes/Maven/repository/org/deeplearning4j/deeplearning4j-nlp/0.4-rc3.4/deeplearning4j-nlp-0.4-rc3.4.jar!/org/deeplearning4j/text/tokenization/tokenizer/preprocessor/CommonPreprocessor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="21" selection-start-line="10" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programmes/Maven/repository/org/deeplearning4j/deeplearning4j-nlp/0.4-rc3.4/deeplearning4j-nlp-0.4-rc3.4.jar!/org/deeplearning4j/models/word2vec/wordstore/VocabCache.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.333334">
+          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programmes/Maven/repository/org/deeplearning4j/deeplearning4j-nlp/0.4-rc3.4/deeplearning4j-nlp-0.4-rc3.4.jar!/org/deeplearning4j/models/word2vec/VocabWord.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7777777">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.807692">
+          <caret line="109" column="29" selection-start-line="109" selection-start-column="29" selection-end-line="109" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programmes/Maven/repository/org/apache/jena/jena-arq/3.0.1-SNAPSHOT/jena-arq-3.0.1-20151126.112141-76.jar!/org/apache/jena/query/QuerySolution.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1859375">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programmes/Maven/repository/org/apache/jena/jena-arq/3.0.1-SNAPSHOT/jena-arq-3.0.1-20151126.112141-76.jar!/org/apache/jena/sparql/engine/http/QueryEngineHTTP.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.725">
+          <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecRawTextExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="185" column="40" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
+          <folding>
+            <element signature="method#annotate#0;class#DBpediaHelper#0" expanded="false" />
+            <element signature="method#getTypesIndex#0;class#DBpediaHelper#0" expanded="false" />
+            <element signature="method#getTypesIndexFromFile#0;class#DBpediaHelper#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="69" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaPreprocessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28035983">
+        <state vertical-scroll-proportion="0.0">
           <caret line="11" column="75" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="75" />
           <folding />
         </state>
@@ -1146,44 +1291,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaSpotlightCustomClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30584708">
-          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/DBpediaHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.96851575">
-          <caret line="47" column="103" selection-start-line="47" selection-start-column="103" selection-end-line="47" selection-end-column="103" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#extractWithSurfaceForm#0;class#DBpediaSpotlightCustomClient#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/JenaSparqlClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76911074">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getRelations#0;class#JenaSparqlClient#0" expanded="false" />
+            <element signature="method#getTypes#0;class#JenaSparqlClient#0" expanded="false" />
+            <element signature="e#3434#3442#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/Word2VecHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7181409">
-          <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/insalyon/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2293853">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.8155922">
+          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#extract#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#loadModel#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeParametersFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#writeEntitiesFile#0;class#Word2VecHelper#0" expanded="false" />
+            <element signature="method#cosineSimilarity#0;class#Word2VecHelper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1220,7 +1358,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.35517243" />
               </list>
             </option>
           </splitter-proportions>
@@ -1255,7 +1393,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.35517243" />
                 <option value="0.6" />
               </list>
             </option>
@@ -1276,7 +1414,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: org.dbpedia.spotlight:spotlight:0.7</last-edited>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

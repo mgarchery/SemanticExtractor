@@ -26,6 +26,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 public class Word2VecHelper {
@@ -35,6 +36,7 @@ public class Word2VecHelper {
 
     private static final String OUTPUT_VECTORS = "output/" + App.INPUT_RESOURCE + "_vectors" ;
 
+    //word2vec parameters
     private static final float LEARNING_RATE = 0.025f;
     private static final int VECTOR_LENGTH = 100;
     private static final int BATCH_SIZE = 1000;
@@ -44,6 +46,12 @@ public class Word2VecHelper {
     private static final int LAYER_SIZE = 100;
     private static final int WINDOW_SIZE = 5;
 
+    /**
+     * extracts word2vec model from given file path
+     * writes the word vectors model to file, writes used parameters to file
+     * @param inputResource path to text file
+     * @throws Exception if any file error occurs
+     */
     public static void extract(String inputResource) throws Exception {
 
         log.info("Load & Vectorize Sentences....");
@@ -80,12 +88,22 @@ public class Word2VecHelper {
         writeParametersFile(inputResource);
     }
 
+    /**
+     * loads word2vec model from file
+     * @return word vectors object
+     * @throws Exception if any file error occurs
+     */
     public static WordVectors loadModel() throws Exception{
         File f = new File(OUTPUT_VECTORS);
         Pair<InMemoryLookupTable, VocabCache> p = WordVectorSerializer.loadTxt(f);
         return WordVectorSerializer.fromPair(p);
     }
 
+    /**
+     * writes the current word2vec parameters to file
+     * @param inputResource
+     * @throws Exception
+     */
     private static void writeParametersFile(String inputResource) throws Exception{
         File f = new File(OUTPUT_VECTORS + ".parameters");
         FileOutputStream fos = new FileOutputStream(f);
@@ -110,4 +128,42 @@ public class Word2VecHelper {
 
 
     }
+
+    /**
+     * writes all entities of the given word2vec model to text file
+     * @param model word2vec model
+     * @throws Exception
+     */
+    public static void writeEntitiesFile(WordVectors model) throws Exception{
+        File f = new File(OUTPUT_VECTORS + ".entities");
+        FileOutputStream fos = new FileOutputStream(f);
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+
+        for (String line : model.vocab().words()){
+            bw.write(line);
+            bw.newLine();
+        }
+        bw.close();
+    }
+
+    /**
+     * computes the cosine similarity between two input vectors (assuming same length)
+     * @param vectorA
+     * @param vectorB
+     * @return cosine similarity as double
+     */
+    private static double cosineSimilarity(double[] vectorA, double[] vectorB) {
+        double dotProduct = 0.0;
+        double normA = 0.0;
+        double normB = 0.0;
+        for (int i = 0; i < vectorA.length; i++) {
+            dotProduct += vectorA[i] * vectorB[i];
+            normA += Math.pow(vectorA[i], 2);
+            normB += Math.pow(vectorB[i], 2);
+        }
+        return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+    }
+
+
+
 }
