@@ -24,7 +24,7 @@ public class AnalogiesExtractor {
      * @param entity
      * @return
      */
-    public List<Map.Entry<String, Integer>> getEntitiesWithSimilarType(String entity){
+    public List<Map.Entry<String, Integer>> getEntitiesWithSimilarType(String entity, int nResults){
 
         Map<String, Integer> unsortedResults = new HashMap<String, Integer>();
         List<Map.Entry<String, Integer>> sortedResults = null;
@@ -54,9 +54,15 @@ public class AnalogiesExtractor {
                 }
             });
 
+
+
+        }
+        if(sortedResults.size() > nResults){
+            return sortedResults.subList(0, nResults);
+        }else{
+            return sortedResults;
         }
 
-        return sortedResults;
     }
 
     /**
@@ -72,6 +78,7 @@ public class AnalogiesExtractor {
                 String object = triple.getObject();
                 object = object.replaceAll("http://dbpedia.org/resource/", "");
                 if(word2vec.hasWord(object)){
+                    triple.setVector(MathUtil.vectorMinus(word2vec.getWordVector(object), word2vec.getWordVector(triple.getSubject())));
                     relations.add(triple);
                 }
             }
@@ -79,6 +86,26 @@ public class AnalogiesExtractor {
         }
 
         return relations;
+    }
+
+
+    public List<RDFTriple> inferAnalogies(String baseEntity, List<RDFTriple> baseEntityRelations, List<Map.Entry<String, Integer>> similarEntities){
+        List<RDFTriple> analogies = new ArrayList<RDFTriple>();
+
+        for(Map.Entry<String,Integer> similarEntity : similarEntities){
+            for(RDFTriple triple : baseEntityRelations){
+                List<String> positive = Arrays.asList(triple.getObject(true), similarEntity.getKey());
+                List<String> negative = Arrays.asList(baseEntity);
+
+                Collection<String> targets = word2vec.wordsNearest(positive, negative, 1);
+                for (String target : targets){
+                    analogies.add(new RDFTriple(similarEntity.getKey(), triple.getRelation(), target));
+                }
+
+            }
+        }
+
+        return analogies;
     }
 
 }

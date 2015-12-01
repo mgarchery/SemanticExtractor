@@ -26,9 +26,8 @@ public class App
             //WordVectors vec = Word2VecHelper.loadModel() ;
             //Word2VecHelper.writeEntitiesFile(vec);
 
-            //getSimilarTypesTest();
+            inferAnalogiesTest();
 
-            getRelationsInCorpusTest();
 
 
         }catch(Exception e){
@@ -37,37 +36,62 @@ public class App
 
     }
 
-    private static void getSimilarTypesTest() throws Exception{
+    private static List<Map.Entry<String, Integer>> getSimilarTypesTest(String baseEntity, int similarEntities, AnalogiesExtractor anex) throws Exception{
 
-        final int MIN_COMMON_TYPES = 10;
-
-        WordVectors vec = Word2VecHelper.loadModel() ;
-        Map<String, List<String>> typesIndex = DBpediaHelper.getTypesIndexFromFile();
-
-        AnalogiesExtractor anex = new AnalogiesExtractor(vec,typesIndex);
-        List<Map.Entry<String, Integer>> similar= anex.getEntitiesWithSimilarType("France");
+        List<Map.Entry<String, Integer>> similar= anex.getEntitiesWithSimilarType(baseEntity, similarEntities);
         for (Map.Entry<String, Integer> s : similar){
-            if(s.getValue() > MIN_COMMON_TYPES){
+
                 log.info(s.getKey() + " " + s.getValue());
-            }
+
         }
-
-
+        return similar;
     }
 
-    private static void getRelationsInCorpusTest() throws Exception{
+    private static List<RDFTriple> getRelationsInCorpusTest(String baseEntity, AnalogiesExtractor anex) throws Exception{
 
-        final int MIN_COMMON_TYPES = 10;
-
-        WordVectors vec = Word2VecHelper.loadModel() ;
-        Map<String, List<String>> typesIndex = DBpediaHelper.getTypesIndexFromFile();
-
-        AnalogiesExtractor anex = new AnalogiesExtractor(vec,typesIndex);
-        List<RDFTriple> relations = anex.getRelationsWithinCorpus(Arrays.asList("France"));
+        List<RDFTriple> relations = anex.getRelationsWithinCorpus(Arrays.asList(baseEntity));
 
         for (RDFTriple triple : relations){
             log.info(triple.getSubject() + " " + triple.getRelation() + " " + triple.getObject());
+//            String vector = "";
+//            for(int i = 0; i < triple.getVector().length; i++){
+//                vector += triple.getVector()[i] + ";";
+//            }
+//            log.info(vector);
         }
+
+        return relations;
+
+    }
+
+    private static List<RDFTriple> inferAnalogiesTest() throws Exception{
+        String baseEntity = "Paris";
+        int numberSimilarEntities = 15;
+
+        //load model and get index and analogies extractor
+        WordVectors vec = Word2VecHelper.loadModel() ;
+        Map<String, List<String>> typesIndex = DBpediaHelper.getTypesIndexFromFile();
+        AnalogiesExtractor anex = new AnalogiesExtractor(vec,typesIndex);
+
+        //get entities similar to base entity
+        List<Map.Entry<String, Integer>> similarEntities = getSimilarTypesTest(baseEntity, numberSimilarEntities, anex);
+
+        //get base entity relations
+        List<RDFTriple> baseEntityRelations = getRelationsInCorpusTest(baseEntity, anex);
+
+        //infer analogies
+        List<RDFTriple> newRelations = anex.inferAnalogies(baseEntity, baseEntityRelations, similarEntities);
+
+        for (RDFTriple triple : newRelations){
+            log.info(triple.getSubject() + " " + triple.getRelation() + " " + triple.getObject());
+//            String vector = "";
+//            for(int i = 0; i < triple.getVector().length; i++){
+//                vector += triple.getVector()[i] + ";";
+//            }
+//            log.info(vector);
+        }
+
+        return newRelations;
 
     }
 }
