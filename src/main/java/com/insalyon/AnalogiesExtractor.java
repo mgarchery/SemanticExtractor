@@ -75,8 +75,8 @@ public class AnalogiesExtractor {
         for(String entity : entities){
             List<RDFTriple> rel = JenaSparqlClient.getRelations(entity);
             for (RDFTriple triple : rel){
-                String object = triple.getObject();
-                object = object.replaceAll("http://dbpedia.org/resource/", "");
+                String object = triple.getObject(true);
+                //object = object.replaceAll("http://dbpedia.org/resource/", "");
                 if(word2vec.hasWord(object)){
                     triple.setVector(MathUtil.vectorMinus(word2vec.getWordVector(object), word2vec.getWordVector(triple.getSubject())));
                     relations.add(triple);
@@ -88,18 +88,34 @@ public class AnalogiesExtractor {
         return relations;
     }
 
+    /**
+     * finds new analogies using a base entity, its known relations and similar entities
+     * returns only analogies whose cosim is greater to minCosim
+     * @param baseEntity base entity
+     * @param baseEntityRelations known relations of the base entity in the corpus
+     * @param similarEntities entities similar to the base entity
+     * @param minCosim minimum cosine similarity
+     * @return new relations as list of RDF triples
+     */
+    public List<Analogy> inferAnalogies(String baseEntity, List<RDFTriple> baseEntityRelations, List<Map.Entry<String, Integer>> similarEntities, double minCosim){
+        List<Analogy> analogies = new ArrayList<Analogy>();
 
-    public List<RDFTriple> inferAnalogies(String baseEntity, List<RDFTriple> baseEntityRelations, List<Map.Entry<String, Integer>> similarEntities){
-        List<RDFTriple> analogies = new ArrayList<RDFTriple>();
-
+        List<String> negative = Arrays.asList(baseEntity);
         for(Map.Entry<String,Integer> similarEntity : similarEntities){
-            for(RDFTriple triple : baseEntityRelations){
-                List<String> positive = Arrays.asList(triple.getObject(true), similarEntity.getKey());
-                List<String> negative = Arrays.asList(baseEntity);
+             for(RDFTriple triple : baseEntityRelations){
+                List<String> positive = Arrays.asList(similarEntity.getKey(), triple.getObject(true));
 
                 Collection<String> targets = word2vec.wordsNearest(positive, negative, 1);
                 for (String target : targets){
-                    analogies.add(new RDFTriple(similarEntity.getKey(), triple.getRelation(), target));
+                    RDFTriple analogyTriple = new RDFTriple(similarEntity.getKey(), triple.getRelation(), target);
+                    analogyTriple.setVector(MathUtil.vectorMinus(word2vec.getWordVector(target), word2vec.getWordVector(similarEntity.getKey())));
+                    Analogy a = new Analogy(triple, analogyTriple);
+
+                    if(a.getCosim() >= minCosim){
+                        analogies.add(a);
+                    }
+
+
                 }
 
             }

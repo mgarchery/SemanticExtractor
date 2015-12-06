@@ -25,7 +25,7 @@ public class MathUtil {
      * @param vectorB
      * @return cosine similarity as double
      */
-    private static double cosineSimilarity(double[] vectorA, double[] vectorB) {
+    public static double cosineSimilarity(double[] vectorA, double[] vectorB) {
         double dotProduct = 0.0;
         double normA = 0.0;
         double normB = 0.0;

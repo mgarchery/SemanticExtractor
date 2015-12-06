@@ -2,9 +2,13 @@ package com.insalyon;
 
 
 
+import org.deeplearning4j.models.embeddings.loader.WordVectorSerializer;
 import org.deeplearning4j.models.embeddings.wordvectors.WordVectors;
+import org.deeplearning4j.models.word2vec.Word2Vec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.AbstractMap;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +25,9 @@ public class App
     {
 
         try{
+
+            //Word2VecRawTextExample.test();
+
             //Word2VecHelper.extract(INPUT_RESOURCE);
             //DBpediaHelper.annotate();
             //WordVectors vec = Word2VecHelper.loadModel() ;
@@ -36,7 +43,7 @@ public class App
 
     }
 
-    private static List<Map.Entry<String, Integer>> getSimilarTypesTest(String baseEntity, int similarEntities, AnalogiesExtractor anex) throws Exception{
+    private static List<Map.Entry<String, Integer>> getSimilarEntitiesTest(String baseEntity, int similarEntities, AnalogiesExtractor anex) throws Exception{
 
         List<Map.Entry<String, Integer>> similar= anex.getEntitiesWithSimilarType(baseEntity, similarEntities);
         for (Map.Entry<String, Integer> s : similar){
@@ -64,9 +71,10 @@ public class App
 
     }
 
-    private static List<RDFTriple> inferAnalogiesTest() throws Exception{
-        String baseEntity = "Paris";
-        int numberSimilarEntities = 15;
+    private static List<Analogy> inferAnalogiesTest() throws Exception{
+        String baseEntity = "Germany";
+        int numberSimilarEntities = 20;
+        double minCosim = 0.6;
 
         //load model and get index and analogies extractor
         WordVectors vec = Word2VecHelper.loadModel() ;
@@ -74,22 +82,26 @@ public class App
         AnalogiesExtractor anex = new AnalogiesExtractor(vec,typesIndex);
 
         //get entities similar to base entity
-        List<Map.Entry<String, Integer>> similarEntities = getSimilarTypesTest(baseEntity, numberSimilarEntities, anex);
+        List<Map.Entry<String, Integer>> similarEntities = getSimilarEntitiesTest(baseEntity, numberSimilarEntities, anex);
+
+        //add base entity to see if we find its relations like we should
+        similarEntities.add(0, new AbstractMap.SimpleEntry<String,Integer>(baseEntity,0));
 
         //get base entity relations
         List<RDFTriple> baseEntityRelations = getRelationsInCorpusTest(baseEntity, anex);
 
         //infer analogies
-        List<RDFTriple> newRelations = anex.inferAnalogies(baseEntity, baseEntityRelations, similarEntities);
+        List<Analogy> newRelations = anex.inferAnalogies(baseEntity, baseEntityRelations, similarEntities, minCosim);
 
-        for (RDFTriple triple : newRelations){
-            log.info(triple.getSubject() + " " + triple.getRelation() + " " + triple.getObject());
+        for (Analogy a : newRelations){
+            log.info(a.toString());
 //            String vector = "";
 //            for(int i = 0; i < triple.getVector().length; i++){
 //                vector += triple.getVector()[i] + ";";
 //            }
 //            log.info(vector);
         }
+
 
         return newRelations;
 

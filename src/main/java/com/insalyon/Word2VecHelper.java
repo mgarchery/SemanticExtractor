@@ -95,8 +95,7 @@ public class Word2VecHelper {
      */
     public static WordVectors loadModel() throws Exception{
         File f = new File(OUTPUT_VECTORS);
-        Pair<InMemoryLookupTable, VocabCache> p = WordVectorSerializer.loadTxt(f);
-        return WordVectorSerializer.fromPair(p);
+        return WordVectorSerializer.loadTxtVectors(f);
     }
 
     /**

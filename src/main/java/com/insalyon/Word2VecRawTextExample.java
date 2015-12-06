@@ -72,7 +72,13 @@ public class Word2VecRawTextExample {
         log.info("Similar words to 'university' : " + similar);
 
         Collection<String> list = vec.wordsNearest(Arrays.asList("my", "you"), Arrays.asList("me"), 10);
-        log.info("me + you - my = ");
+        log.info("-me + you + my = ");
+        for (String s : list) {
+            log.info(s);
+        }
+
+       list = vec.wordsNearest(Arrays.asList("my", "you"), Arrays.asList("my"), 10);
+        log.info("my + you - my = ");
         for (String s : list) {
             log.info(s);
         }
@@ -81,5 +87,6 @@ public class Word2VecRawTextExample {
         for (String w : vec.vocab().words()) {
             log.info(w);
         }
+        
     }
 }
