@@ -44,7 +44,7 @@ public class Word2VecHelper {
     private static final int MIN_WORD_FREQUENCY = 5;
     private static final int NET_ITERATIONS = 1;
     private static final int LAYER_SIZE = 100;
-    private static final int WINDOW_SIZE = 5;
+    private static final int WINDOW_SIZE = 10;
 
     /**
      * extracts word2vec model from given file path

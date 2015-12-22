@@ -20,7 +20,7 @@ public class Analogy {
 
     @Override
     public String toString(){
-        return baseRelation.getSubject() + " : " + baseRelation.getObject()
+        return baseRelation.getSubject() + " : " + baseRelation.getObject(true)
                 + " :: " + analogyRelation.getSubject() + " : " + analogyRelation.getObject()
                 + " (" + baseRelation.getRelation() + " " + String.format("%.3f", getCosim()) +")";
     }
